@@ -21,7 +21,6 @@ def init(message):
     user = message.from_user.id
     if mess == 'Fuel calculating':
         cl.date_create(user)
-        print(cl.date)
         bot.send_message(message.chat.id, 'How many kilometers is the trip?')
         bot.register_next_step_handler(message, base_values)
     else:
