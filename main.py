@@ -21,13 +21,26 @@ def init(message):
     user = message.from_user.id
     if mess == 'Fuel calculating':
         cl.date_create(user)
-        bot.send_message(message.chat.id, 'How many kilometers is the trip?')
+        bot.send_message(message.chat.id, 'How many kilometers is the trip?',
+                         reply_markup=k.keyboards['keyboard_remove'])
         bot.register_next_step_handler(message, base_values)
     else:
         bot.send_message(message.chat.id, 'Please use the button', reply_markup=k.keyboards['keyboard_init'])
 
 
 def base_values(message):
+    mess = message.text
+    user = message.from_user.id
+    res = cl.calculating(mess, user)
+    if len(cl.date[user]) != 3:
+        bot.send_message(message.chat.id, res)
+        bot.register_next_step_handler(message, base_values)
+    else:
+        bot.send_message(message.chat.id, 'basic values is done', reply_markup=k.keyboards['keyboard_people'])
+        bot.register_next_step_handler(message, final_calc)
+
+
+def final_calc(message):
     pass
 
 

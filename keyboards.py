@@ -5,17 +5,19 @@ keyboards = {}
 
 def keyboards_create():
     keyboard_init()
+    keyboard_remove()
+    keyboard_people()
 
 
 def keyboard_init():
-    init_k = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False)
+    init_k = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     button = types.KeyboardButton('Fuel calculating')
     init_k.add(button)
     keyboards['keyboard_init'] = init_k
 
 
 def keyboard_people():
-    people_k = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False)
+    people_k = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     button1 = types.KeyboardButton("I'm going alone")
     button2 = types.KeyboardButton('2')
     button3 = types.KeyboardButton('3')
@@ -23,3 +25,8 @@ def keyboard_people():
     people_k.add(button1)
     people_k.add(button2, button3, button4)
     keyboards['keyboard_people'] = people_k
+
+
+def keyboard_remove():
+    remove_k = types.ReplyKeyboardRemove()
+    keyboards['keyboard_remove'] = remove_k
