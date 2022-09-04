@@ -36,12 +36,22 @@ def base_values(message):
         bot.send_message(message.chat.id, res)
         bot.register_next_step_handler(message, base_values)
     else:
-        bot.send_message(message.chat.id, 'basic values is done', reply_markup=k.keyboards['keyboard_people'])
+        bot.send_message(message.chat.id, 'How many people divide the price of fuel?',
+                         reply_markup=k.keyboards['keyboard_people'])
         bot.register_next_step_handler(message, final_calc)
 
 
 def final_calc(message):
-    pass
+    mess = message.text
+    user = message.from_user.id
+    res = cl.calculating(mess, user)
+    if res:
+        bot.send_message(message.chat.id, res, reply_markup=k.keyboards['keyboard_init'])
+        bot.register_next_step_handler(message, init)
+    else:
+        bot.send_message(message.chat.id, 'How many people divide the price of fuel?\nPlease use the button',
+                         reply_markup=k.keyboards['keyboard_people'])
+        bot.register_next_step_handler(message, final_calc)
 
 
 bot.polling(none_stop=True)
