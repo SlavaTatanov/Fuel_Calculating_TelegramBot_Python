@@ -1,2 +1,12 @@
 # Simple Fuel Calculating TelegramBot
 
+Requests the user for data on the length of the trip, fuel consumption, and more. Calculates the amount of money and 
+fuel that the user will spend on fuel during the trip and gives him the final results.
+
+![ScreenShot](https://lh3.googleusercontent.com/I9f_f1qYmlE5opqSw5ds92FdRbC8m7Xad_4fg7l7ASgJ_IcigA53DYaoWUH-PklDv6BQMYbTdzpELkFnEJfdThwkdvPPdZ05JyHtMEOVEisSsOuVwkv81z4ytM4RAHq8hIbY_Uyr7idfY9p0286WcHDuKrmt-XyXgtvTnXZf5t3oNHftoDc_Y__oiSY8PgmmEkUn9eQLFEmd_9NmVntFUmZyFcgshBWCSuKSBnr4_V0ZlbRcyHcuvUSjw_emtGgKXkJlZ9CyYJM53X34Bu1sVLDRjcaXiEb1D36M7MNpwWZ4rDpSClTek5-Ufi6c4AHq3UugVPCvitzHaLHSpttSjWj5tmngxvWbtCT8bm1g62zw3g3ZX800OzruS950dDCyBkhY1QOb9aLsFTAP2NJeI-lUaO_iOF48lA0Whhl_cz68OsYvylV6Yq7r5J1MG69llu8TcmcxBmby5kE4vyr_D1biB8po9M6St67VTe9O_z5qdbs4aEIltOr2QEecXXItayCWeeVkAS3i9_bgUcEnJ1eIcfoVZ_wvxcQFbKp7KwLJOdIETK_cFxR453JvJe22zn0XW9CWoVMtpZLZGIB3fSLFyWMETFuLiRAuJ9qDeKXQUxLqYZuPUSG0FBQ_npK6PbzG_c1wf3CaFkN4r22T_yxEQslWdcx98XYL70p2ZZx_U5eWFYEkuH2wmn0vxcztaq4zC19JL35yfmDzRbs1QoNXRFlhnFxSism8v9aWV92aRMNGjTxIwZ1ljL3ijA=w817-h882-no?authuser=0)
+
+To start the bot, you need to get a TOKEN from the bot in telegram - BotFather. This token must be used in the 
+config.py file. Using environment variables or not.
+
+Written using the pyTelegramBotAPI library.
+

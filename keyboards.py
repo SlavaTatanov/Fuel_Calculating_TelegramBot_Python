@@ -11,14 +11,14 @@ def keyboards_create():
 
 def keyboard_init():
     init_k = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    button = types.KeyboardButton('Fuel calculating')
+    button = types.KeyboardButton('Расчет топлива')
     init_k.add(button)
     keyboards['keyboard_init'] = init_k
 
 
 def keyboard_people():
     people_k = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    button1 = types.KeyboardButton("I'm going alone")
+    button1 = types.KeyboardButton("Я еду один")
     button2 = types.KeyboardButton('2')
     button3 = types.KeyboardButton('3')
     button4 = types.KeyboardButton('4')

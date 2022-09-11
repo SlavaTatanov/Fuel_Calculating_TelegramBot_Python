@@ -11,21 +11,21 @@ k.keyboards_create()
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.send_message(message.chat.id, "Hi, I'm a bot that can calculate fuel and the amount of money spent on it on "
-                                      "a trip.", reply_markup=k.keyboards['keyboard_init'])
+    bot.send_message(message.chat.id, "Привет, я рассчитываю количество денег потраченных на топливо в поездке",
+                     reply_markup=k.keyboards['keyboard_init'])
 
 
 @bot.message_handler(content_types=['text'])
 def init(message):
     mess = message.text
     user = message.from_user.id
-    if mess == 'Fuel calculating':
+    if mess == 'Расчет топлива':
         cl.date_create(user)
-        bot.send_message(message.chat.id, 'How many kilometers is the trip?',
+        bot.send_message(message.chat.id, 'Сколько километров поездка?',
                          reply_markup=k.keyboards['keyboard_remove'])
         bot.register_next_step_handler(message, base_values)
     else:
-        bot.send_message(message.chat.id, 'Please use the button', reply_markup=k.keyboards['keyboard_init'])
+        bot.send_message(message.chat.id, 'Если хотите выполнить расчет топлива\nиспользуйте кнопку', reply_markup=k.keyboards['keyboard_init'])
 
 
 def base_values(message):
@@ -36,7 +36,7 @@ def base_values(message):
         bot.send_message(message.chat.id, res)
         bot.register_next_step_handler(message, base_values)
     else:
-        bot.send_message(message.chat.id, 'How many people divide the price of fuel?',
+        bot.send_message(message.chat.id, 'На сколько человек делим деньги за поездку?',
                          reply_markup=k.keyboards['keyboard_people'])
         bot.register_next_step_handler(message, final_calc)
 
@@ -49,7 +49,7 @@ def final_calc(message):
         bot.send_message(message.chat.id, res, reply_markup=k.keyboards['keyboard_init'])
         bot.register_next_step_handler(message, init)
     else:
-        bot.send_message(message.chat.id, 'How many people divide the price of fuel?\nPlease use the button',
+        bot.send_message(message.chat.id, 'На сколько человек делим деньги за поездку?\nПожалуйста используйте кнопки',
                          reply_markup=k.keyboards['keyboard_people'])
         bot.register_next_step_handler(message, final_calc)
 
