@@ -25,7 +25,8 @@ def init(message):
                          reply_markup=k.keyboards['keyboard_remove'])
         bot.register_next_step_handler(message, base_values)
     else:
-        bot.send_message(message.chat.id, 'Если хотите выполнить расчет топлива\nиспользуйте кнопку', reply_markup=k.keyboards['keyboard_init'])
+        bot.send_message(message.chat.id, 'Если хотите выполнить расчет топлива\nиспользуйте кнопку',
+                         reply_markup=k.keyboards['keyboard_init'])
 
 
 def base_values(message):
